@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kazakh/bloc/main_bloc.dart';
+import 'package:kazakh/details/feature.dart';
 import 'package:kazakh/hive/model.dart';
 import 'package:kazakh/style/style.dart';
 import 'package:provider/src/provider.dart';
@@ -11,7 +12,9 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(context, detailsScreenRoute(model));
+      },
       child: Container(
         decoration: BoxDecoration(
             color: Colors.cyan, borderRadius: BorderRadius.circular(10)),
