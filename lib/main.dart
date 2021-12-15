@@ -26,6 +26,10 @@ class Root extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Список'),
+          backgroundColor: Colors.cyan,
+        ),
         floatingActionButton: FloatingActionButton(
             backgroundColor: Colors.cyan,
             child: const Icon(Icons.add),

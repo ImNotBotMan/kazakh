@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kazakh/bloc/main_bloc.dart';
 import 'package:kazakh/components/custom_filed.dart';
 import 'package:kazakh/components/main_button.dart';
+import 'package:kazakh/style/style.dart';
 // ignore: implementation_imports
 import 'package:provider/src/provider.dart';
 
@@ -29,6 +30,16 @@ class _Body extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const SizedBox(
+              height: 20,
+            ),
+            Text(
+              'Добавить новую вкладку',
+              style: AppTextStyle.black20Bold(),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
             CustomField(controller: titleController, label: 'Название'),
             const SizedBox(
               height: 20,
@@ -38,7 +49,7 @@ class _Body extends StatelessWidget {
               height: 20,
             ),
             MainButton(
-                label: 'label',
+                label: 'Добавить',
                 onTap: () {
                   context.read<MainBloc>().add(AddNewTheme(
                       text: textController.text, title: titleController.text));

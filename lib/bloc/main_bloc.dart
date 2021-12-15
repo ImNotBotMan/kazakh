@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:kazakh/bloc/parts/values.dart';
 import 'package:kazakh/hive/boxes.dart';
 import 'package:kazakh/hive/model.dart';
 import 'package:meta/meta.dart';

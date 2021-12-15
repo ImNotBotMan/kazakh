@@ -6,8 +6,9 @@ extension Init on MainBloc {
     Emitter<MainState> emit,
   ) async {
     try {
+      data.addAll(initialData);
       box = Boxes.getValue();
-      data = box.values.toList();
+      data.addAll(box.values.toList());
       emit(LoadedData(data));
     } catch (e) {}
   }

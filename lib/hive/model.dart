@@ -7,4 +7,8 @@ class ThemeModel extends HiveObject {
   late final String title;
   @HiveField(1)
   late final String text;
+  @HiveField(3)
+  final String? translate;
+
+  ThemeModel({this.translate});
 }

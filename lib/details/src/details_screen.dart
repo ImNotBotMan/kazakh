@@ -10,6 +10,10 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.cyan,
+        title: const Text('Детальный просмотр'),
+      ),
       body: _Body(model: model),
     ));
   }
@@ -22,27 +26,33 @@ class _Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: [
-            Center(
-              child: Text(
-                model.title,
-                style: AppTextStyle.black20Bold(),
-              ),
+    return PageView.builder(
+      itemCount: model.translate != null ? 2 : 1,
+      itemBuilder: (BuildContext context, int index) {
+        return SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              children: [
+                Center(
+                  child: Text(
+                    model.title,
+                    style: AppTextStyle.black20Bold(),
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                Text(
+                  index == 1 ? model.translate ?? 'no' : model.text,
+                  style: AppTextStyle.black16(),
+                )
+              ],
             ),
-            const SizedBox(
-              height: 16,
-            ),
-            Text(
-              model.text,
-              style: AppTextStyle.black16(),
-            )
-          ],
-        ),
-      ),
+          ),
+        );
+      },
+      // child:
     );
   }
 }
